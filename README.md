@@ -1,0 +1,1 @@
+Ui.R and Server.R run the shiny application. The excel file contains all the FIPS codes needed. *Please be aware it takes a moment to populate the select boxes for the location as it needs to read through the excel file*
