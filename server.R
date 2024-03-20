@@ -276,11 +276,9 @@ function(input, output, session) {
   })
 
   observeEvent(input$loc_2_places, {
-    print(input$loc_2_places)
     if (input$loc_2_places != "") {
       location_dfs$loc_2_result_df <- get_data(input, input$loc_2_state, input$loc_2_places)
     }
-    print(location_dfs$loc_2_result_df)
   })
 
   observeEvent(input$loc_3_places, {
@@ -301,8 +299,6 @@ function(input, output, session) {
       if (!is.null(joined)) {
         joined <- joined |> filter(var_type %in% variables$active)
         if (!is.null(input$races) & input$use_race) {
-          print(joined$variable)
-          print(joined$races)
           joined <- joined |> filter(joined$variable %in% input$races | joined$var_type != "Race")
         }
         if (!is.null(input$household) & input$use_household) {
